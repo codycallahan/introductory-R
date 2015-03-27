@@ -1,0 +1,130 @@
+---
+title: "Introduction to R"
+author: "Bradley Fay"
+date: "March 17, 2015"
+output: ioslides_presentation
+---
+
+## Basic Objects
+
+There are two main types of Objects in R: **Data** and **Functions**
+
+* Data - these are storing something
+* Functions - these are for doing something
+
+## Data Types
+
+- Vectors
+- Lists
+- Data Frames
+
+
+## Data Types - Vectors
+
+A *vector* is a one-dimensional collection of data points of a similar kind
+```{r}
+xNum  <- c(1, 3.14, 5, -7)
+xLog  <- c(TRUE, FALSE, T, F)
+xChar <- c("asu", "sun", "devils", "tempe")
+xMix  <- c(1, T, 3, "Hello, world!")
+xNum
+xMix
+```
+
+## Data Types - Vectors
+
+Vectors can be appended to one another with `c()`:
+```{r}
+x2 <- c(xNum,xNum)
+x2
+```
+## Data Types - Vectors
+Vectors have summary information found with  `summary()`:
+```{r}
+summary(xNum)
+summary(xLog)
+```
+## Data Types - Vectors
+R is a mathematical language that uses rules of Linear Algebra:
+```{r}
+# Vector plus Scalar
+xNum + 2
+```
+
+WARNING: R recyles items in a vector to match lengths
+```{r}
+# Adding Vectors of Unequal Length
+xNum + c(2, -3)
+```
+## Matrix Math vs. Vector Math
+
+R uses different operators for Matrix math and Vector math. Most of what you will use is Vector Math.
+
+Matrix Multiplication uses `%*%` where as Vector Multiplication uses `*`
+## Data Types - Vectors
+Vectors coerce all values into the most general version of the same class or type:
+```{r}
+# str() is structure of vector
+str(xMix)
+str(xNum)
+```
+A lot of my troubles happen here when values are stored as the write class!
+
+## Indexing
+*Indexing* is how you access specific values in vectors, lists, and data frames.
+R uses base 1 indexing.
+
+```{r}
+xMix[1]
+xMix[4]
+```
+Since `xMix` is a one-dimensional vector, there is only one dimension to index in. Once you move to matricies and data frames, the number of dimensions can increase infinitely.  Most of the time you'll be dealing with two-dimensional data (e.g., x,y dimensions)
+
+## Sequences and Replications
+`seq()` and `rep()` are useful for creating vectors and lists of values
+```{r}
+seq(from=-3, to=3, by=.5)
+rep(c('ASU', "SUN DEVILS"), each=3)
+rep(seq(from=0, to=4, by=2), c(4,1,7))
+```
+
+
+## Data Types - Lists
+*Lists* are collections of objects of any type
+
+Remember: Vectors automatically converall all variables to same class
+```{r}
+xMix  <- c(1, T, 3, "Hello, world!")
+xMix2 <- list(1, T, 3, "Hello, world!")
+str(xMix)
+str(xMix2)
+```
+
+## Data Types - Lists
+Lists are indexed with double brackets `[[]]`
+Think of a List as a group of vectors.  Vectors are indexed by a single set of brackets `[]`
+
+Lists are used to store results of regressions and other analysis because of the ability to hold multiple data types. I don't use lists for much else.
+
+## Data Types - Data Frames
+*Data Frames* are the workhorse of R. Think of these exactly how you think of a spreadsheet. Each column is a variable, each row is an observation. Each variable needs a unique name and each observation needs a unique ID
+```{r}
+x.df <- data.frame(xNum,xLog,xChar)
+x.df
+```
+
+## Factors
+*Data Frames* coerce character data into what is called a *Factor* unless otherwise specificed not to.
+```{r}
+x.df[1,3]
+```
+
+## Accessing Variables by Name
+In R, you can use the `$` to access specific variables in a data frame. 
+
+```{r}
+x.df$xChar
+```
+
+You can perform operations on vectors by calling them this way `mean(x.df$xNum)` = `r mean(x.df$xNum)`
+
