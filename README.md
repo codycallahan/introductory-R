@@ -35,3 +35,5 @@ Head over to the [CRAN](http://cran.r-project.org/) web page and download the **
 ##Installing R Studio
 
 R comes with a native development environment, but it's a bit clunky and not necessarily straight forward to use. R Studio is a nicely developed and easy to use environment that sits on top of R and Git and makes a lot of useful functionality readily available. Also, it makes the transition from a GUI-based interface with software to a more command line-based interface much easier. 
+
+[Download R Studio](http://www.rstudio.com/products/rstudio/download/)
