@@ -37,3 +37,16 @@ Head over to the [CRAN](http://cran.r-project.org/) web page and download the **
 R comes with a native development environment, but it's a bit clunky and not necessarily straight forward to use. R Studio is a nicely developed and easy to use environment that sits on top of R and Git and makes a lot of useful functionality readily available. Also, it makes the transition from a GUI-based interface with software to a more command line-based interface much easier. 
 
 [Download R Studio](http://www.rstudio.com/products/rstudio/download/)
+
+##Other Software
+In addition to these 4 steps, there are two other pieces of software that will make life much easier. 
+
+You only need these if your going to render R Markdown Documents. We will start using these later so you can install on your own time.
+
+###Pandoc
+
+[Pandoc Install](http://johnmacfarlane.net/pandoc/installing.html)
+
+###Tex
+[MacTex](https://tug.org/mactex/) - LaTeX for Macintosh
+[MicTex](http://miktex.org/download) - LaTeX for Windows
