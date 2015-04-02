@@ -49,13 +49,58 @@ Now that we have the master repository forked and cloned, we need to hook the pr
 * Select **Shell** or **Terminal**
 
 From there, a terminal/shell window should open. type the following
-```git remote add upstream https://github.com/bradleyfay/introductory-R.git```
+```
+git remote add upstream https://github.com/bradleyfay/introductory-R.git
+```
 
-* `git clone`
-* `git status`
-* `git add`
-* `git commit -m ""`
-* `git push`
-* `git branch`
-* `git checkout`
-* `git merge`
+Once you've done this, you've connected your copy of the project back to the original. The next step is to create a branch that you work on which won't conflict with your teammates.
+
+###step 4
+To create a branch, we are going to stay in the terminal window. If you closed the terminal, follow the instructions in Step 3 to get the terminal window back.
+
+With the terminal open, type the following:
+
+```
+git checkout -b [branch-name]
+```
+
+where you replace `[branch-name]` with the unique name of your branch. For this project, use your last name.
+
+At this point, you can code away. Feel free to create your own files and folders. Basically whatever you need to do to complete your work.
+
+When you are done with your work and want to share it with others, proceed to step 5.
+
+###Step 5
+Now that you have done some work, you need it to be double checked. To do this, follow these instructions in R Studio:
+
+* Select the **Git** tab in R Studio
+* Check the boxes for the files you want to send to the main project
+* click the **Committ** button, a window will pop up.
+* Type a short message in the *Commit Message* box on the right. This should explicitly say what you are adding.
+* When you are done with your message, click **commit**
+* You can add unique messages for each file and I encourage you to do so.
+* When you have made all your commitments, you need to **Push** your work to the main repository. Click the **PUSH** button
+* You will be prompted for your Github username and password. Enter those
+* If successful, you will get a message indicating the repository you pushed the changes to. Make sure that it is the master repository `https://github.com/bradleyfay/introductory-R.git`.
+
+If it pushes to your forked repository, you will have to push changes through the terminal. This is pretty straight forward, to do after you have made all your commits through R Studio.
+
+Follow the instructions in Step 3 to open your terminal window. Run the following command: 
+```
+git push origin [branch-name]
+```
+
+This should push all of your changes to the master repository and the project lead can review the changes.
+
+###Step 6
+In this project, I will be updating the master repository with new data sets and scripts. You will need to keep your forked repository up to date. 
+
+To do this through R Studio, click the **PULL** button on the **GIT** tab. Check that the files you pulled are from the parent project: `https://github.com/bradleyfay/introductory-R.git`
+
+If they are not, you will have to go through the terminal. To do this, follow the instructions in step three to open the terminal window. From there, type the following: 
+```
+git pull upstream master
+git push origin master
+```
+
+After running these two commands, you should be up-to-date with the information I have put to the master repository.
