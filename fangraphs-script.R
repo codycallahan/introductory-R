@@ -1,5 +1,6 @@
 library(tidyr)
 library(dplyr)
+library(ggplot2)
 
 pitching <- read.csv("data/FanGraphs_StandardPitching_2014.csv", stringsAsFactors = F)
 pitching <- tbl_df(pitching)
